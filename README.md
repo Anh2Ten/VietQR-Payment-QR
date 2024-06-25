@@ -21,7 +21,7 @@ POST đến api https://dailythuonghien.com/qrpay/
 api sẽ trả về các giá trị mà tham số bank có thể nhận 
 
 # Ví Dụ Yêu Cầu: 
-curl -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello world&bank=MBBank"
+curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello world&bank=MBBank"
 
 ## Kết Quả 
 Api Trên Sẽ Trả Về HTTP Code 200
