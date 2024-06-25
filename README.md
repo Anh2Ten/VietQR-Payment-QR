@@ -24,7 +24,7 @@ bạn có thể xem bản UI tại đây: (Hiển thị các bank mà bên mình
 https://dailythuonghien.com/qrpay/bank.php
 
 # Ví Dụ Yêu Cầu: 
-curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello world&bank=MBBank"
+curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
 
 ## Ghi Chú 📝
 Api Trên Sẽ Trả Về HTTP Code 200 (Nếu code khác có nghĩa yêu cầu thất bại)
