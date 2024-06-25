@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tạo QR Thanh Toán VietQR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Form Tạo QR Code</h2>
+        <form id="qrForm">
+            <label for="account">Số Tài Khoản</label>
+            <input type="text" id="account" name="account" required>
+            
+            <label for="amount">Số Tiền</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="info">Thông Tin</label>
+            <input type="text" id="info" name="info" required>
+            
+            <label for="bank">Ngân Hàng</label>
+            <input type="text" id="bank" name="bank" required>
+            
+            <button type="button" onclick="generateQRCode()">Tạo Mã QR</button>
+        </form>
+
+        <div class="qr-code" id="qrCodeContainer"></div>
+    </div>
+    <div class="content">
+        <h1>API Tạo QR Thanh Toán VietQR</h1>
+        <p>API Tạo QR Thanh Toán VietQR cho phép bạn tạo mã QR cho các thanh toán một cách dễ dàng. Bạn có thể tạo mã QR thanh toán bằng cách thực hiện yêu cầu GET đến endpoint của API với các tham số cần thiết.</p>
+
+        <h2>Endpoint API</h2>
+        <pre>GET https://dailythuonghien.com/qr/</pre>
+
+        <h3>Ví Dụ Yêu Cầu:</h3>
+        <pre>curl -X GET "https://dailythuonghien.com/qr/?account=3893662005&amount=0&info=hello%20world&bank=MBBank"</pre>
+
+        <h3>Tham Số Yêu Cầu</h3>
+        <ul><li><strong>account</strong> (string): Số tài khoản ngân hàng nhận thanh toán.</li>
+            <li><strong>amount</strong> (int): Số tiền cần thanh toán.</li>
+            <li><strong>info</strong> (string): Thông tin bổ sung hoặc mô tả cho thanh toán.</li>
+            <li><strong>bank</strong> (string): Tên ngân hàng.</li>
+        </ul>
+
+        <h2>Kết Quả</h2>
+        <p>API trên sẽ trả về HTTP Code 200 và một chuỗi ký tự. Bạn hãy đem chuỗi ký tự đó encode thành QR là xong. Bạn có thể tạo QR qua API của chúng tôi thông qua:</p>
+        <pre>https://api.dailythuonghien.com/qr/?qr= (Chuỗi Ký Tự Mà API Trả Về)</pre>
+
+        <h3>Bảng Tham Số</h3>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Tham Số</th>
+                <th>Kiểu</th>
+                <th>Mô Tả</th>
+            </tr>
+            <tr>
+                <td>account</td>
+                <td>string</td>
+                <td>Số tài khoản nhận thanh toán. Đây phải là số tài khoản hợp lệ.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>int</td>
+                <td>Số tiền cần chuyển. Đây phải là giá trị số nguyên.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>string</td>
+                <td>Thông tin bổ sung cho giao dịch, có thể bao gồm mục đích thanh toán.</td>
+            </tr>
+            <tr>
+                <td>bank</td>
+                <td>string</td>
+                <td>Tên ngân hàng nơi tài khoản được mở. Đây phải là tên ngân hàng được công nhận.</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script>
+        function generateQRCode() {
+            const account = document.getElementById('account').value;
+            const amount = document.getElementById('amount').value;
+            const info = document.getElementById('info').value;
+            const bank = document.getElementById('bank').value;
+            
+            if (!account || !amount || !info || !bank) {
+                alert('Vui lòng điền đầy đủ thông tin.');
+                return;
+            }
+            
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+            const qrUrl = `https://dailythuonghien.com/qr/?account=${encodeURIComponent(account)}&amount=${encodeURIComponent(amount)}&info=${encodeURIComponent(info)}&bank=${encodeURIComponent(bank)}`;
+
+            fetch(qrUrl)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('API trả về lỗi');
+                    }
+                })
+                .then(data => {const qrCodeApiUrl = `https://api.dailythuonghien.com/qr/?qr=${encodeURIComponent(data)}`;
+                    qrCodeContainer.innerHTML = `<pre>${data}</pre><img src="${qrCodeApiUrl}" alt="QR Code">`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Có lỗi xảy ra khi tạo mã QR.');
+                });
+        }
+    </script>
+
+</body>
+</html>
