@@ -24,8 +24,8 @@ api sẽ trả về các giá trị mà tham số bank có thể nhận
 curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello world&bank=MBBank"
 
 ## Ghi Chú 📝
-Api Trên Sẽ Trả Về HTTP Code 200
+Api Trên Sẽ Trả Về HTTP Code 200 (Nếu code khác có nghĩa yêu cầu thất bại)
 Và Một Chuỗi Ký Tự Bạn Hãy Đem Chuỗi Ký Tự Đó Encode Thành QR Là Xong
-Cậu Có Thể Tạo QR Qua Api của bên khác hoặc tự tạo server QR CODE :
+Cậu Có Thể Tạo QR Qua Api của bên khác hoặc tự tạo server QR CODE :>
 
 
