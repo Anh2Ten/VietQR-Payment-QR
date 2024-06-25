@@ -20,6 +20,9 @@ GET https://dailythuonghien.com/qrpay/
 POST đến api https://dailythuonghien.com/qrpay/
 api sẽ trả về các giá trị mà tham số bank có thể nhận 
 
+bạn có thể xem bản UI tại đây: (Hiển thị các bank mà bên mình support)
+https://dailythuonghien.com/qrpay/bank.php
+
 # Ví Dụ Yêu Cầu: 
 curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello world&bank=MBBank"
 
