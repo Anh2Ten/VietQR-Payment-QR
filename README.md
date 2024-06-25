@@ -29,3 +29,6 @@ Và Một Chuỗi Ký Tự Bạn Hãy Đem Chuỗi Ký Tự Đó Encode Thành Q
 Cậu Có Thể Tạo QR Qua Api của bên khác hoặc tự tạo server QR CODE :>
 
 
+
+Follow tui đi mấy ní ui :>
+<img width="1710" alt="Ảnh màn hình 2024-06-25 lúc 11 17 22" src="https://github.com/Anh2Ten/VietQR-Payment-QR/assets/83670932/1c710e20-0a48-4eaa-9515-0117cb7bde28">
