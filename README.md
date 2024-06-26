@@ -3,6 +3,8 @@ VietQR Chậm vãi cức nên mị làm cái project này để tích hợp vào
 API Tạo QR Thanh Toán VietQR cho phép bạn tạo mã QR cho các thanh toán một cách dễ dàng. 
 Bạn có thể tạo mã QR thanh toán bằng cách thực hiện yêu cầu GET đến endpoint của API với các tham số cần thiết.
 
+https://documenter.getpostman.com/view/28551106/2sA3drJFEQ
+
 Contact If u found any bug :> https://facebook.com/anh2ten
 Tui cần tìm thím nào viết cái tài liệu về api này tại tui lười zl :))
 
