@@ -9,7 +9,7 @@ Contact If u found any bug :> https://facebook.com/anh2ten
 Tui cần tìm thím nào viết cái tài liệu về api này tại tui lười zl :))
 
 ## Endpoint API
-GET https://dailythuonghien.com/qrpay/
+GET https://api.dailythuonghien.com/qrpay/
 
 ### Tham Số Yêu Cầu
 
@@ -19,14 +19,14 @@ GET https://dailythuonghien.com/qrpay/
 - **bank** (string): Tên ngân hàng.
  
 ### Các bank khả dụng 😍
-POST đến api https://dailythuonghien.com/qrpay/
+POST đến api https://api.dailythuonghien.com/qrpay/
 api sẽ trả về các giá trị mà tham số bank có thể nhận 
 
 bạn có thể xem bản UI tại đây: (Hiển thị các bank mà bên mình support)
-https://dailythuonghien.com/qrpay/bank.php
+https://api.dailythuonghien.com/qrpay/bank.php
 
 # Ví Dụ Yêu Cầu: 
-curl -L -X GET "https://dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
+curl -L -X GET "https://api.dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
 
 ## Ghi Chú 📝
 Api Trên Sẽ Trả Về HTTP Code 200 (Nếu code khác có nghĩa yêu cầu thất bại)
