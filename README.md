@@ -3,6 +3,9 @@
 API Tạo QR Thanh Toán VietQR cho phép cậu tạo mã QR cho các thanh toán một cách dễ dàng. 
 Cậu có thể tạo mã QR thanh toán bằng cách thực hiện yêu cầu GET đến endpoint của API với các tham số cần thiết.
  
+If You Found Any Issue Contact Facebook: @Anh2Ten
+Only Support Api Issue Thanks 🫶🏻
+
 # Ví Dụ Yêu Cầu: 
 curl -L -X GET "https://api.dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
 
@@ -18,9 +21,11 @@ POST đến api https://api.dailythuonghien.com/qrpay/
 api sẽ trả về các giá trị mà tham số bank có thể nhận 
 
 ## Ghi Chú 📝
-Api Trên Sẽ Trả Về HTTP Code 200 (Nếu code khác có nghĩa yêu cầu thất bại)
-Và Một Chuỗi Ký Tự Bạn Hãy Đem Chuỗi Ký Tự Đó Encode Thành QR Là Xong
-Cậu Có Thể Tạo QR Qua Api của bên khác hoặc tự tạo server QR CODE :>
+Api Trên Sẽ Trả Về HTTP Code 200 
+Nếu status code khác có nghĩa yêu cầu thất bại
+kiểm tra kỹ các tham số !
+
+api sẽ trả về một string, encode string đó thành qrcode là xong
 
 
 Follow tui đi mấy ní ui :>
