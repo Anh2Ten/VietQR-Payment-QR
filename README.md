@@ -7,7 +7,7 @@ If You Found Any Issue Contact Facebook: @Anh2Ten
 Only Support Api Issue Thanks 🫶🏻
 
 # Ví Dụ Yêu Cầu: 
-curl -L -X GET "https://api.dailythuonghien.com/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
+curl -L -X GET "https://api.quanlybanhang.store/qrpay/?account=3893662005&amount=10000&info=hello&bank=MBBank"
 
 ### Tham Số Yêu Cầu
 
@@ -17,7 +17,7 @@ curl -L -X GET "https://api.dailythuonghien.com/qrpay/?account=3893662005&amount
 - **bank** (string): Tên ngân hàng.
  
 ### Các bank khả dụng 😍
-POST đến api https://api.dailythuonghien.com/qrpay/
+POST đến api https://api.quanlybanhang.store/qrpay/
 api sẽ trả về các giá trị mà tham số bank có thể nhận 
 
 ## Ghi Chú 📝
